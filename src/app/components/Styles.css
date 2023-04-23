@@ -1,18 +1,122 @@
+/* searchBar styles */
 .SearchBar {
-    /* text-align: center; */
-    border-radius: 20px;
-    width: 60%;
-    padding: 8px;
-    padding-left: 16px;
-    margin-top: 16px;
-  }
+  border-radius: 20px;
+  width: 60%;
+  padding: 8px;
+  padding-left: 16px;
+  margin-top: 16px;
+}
+
+/* weather card styles - today's weather */
 .weatherCard {
-  width: 50%;
-  height: 200px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 300px;
   border-width: 1px;
   background-color:lightslategrey;
-  border-radius: 8px;
-  align-self: center;
+  border-radius: 16px;
   padding: 16px;
-  margin: 16px;
+  margin-top: 16px;
+  margin-right: 8px;
+}
+.temperature {
+  font-size: 32px;
+  color: #fff
+}
+.weather {
+  color: #fff;
+}
+.location {
+  color: #fff;
+  border-width: 1px;
+  width: 100%;
+}
+.dateTime {
+  color: #fff;
+}
+
+/* today's highlight's styles */
+.todaysHighlight {
+  display: flex;
+  flex: 3;
+  /* height: 300px; */ 
+  flex-direction: column;
+  background-color:darkgrey;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+  margin-left: 8px;
+}
+.todaysHighlightTitle {
+  color: #fff;
+  width: 100%;
+  height: fit-content;
+}
+.todaysHighlightBody {
+  display: flex;
+  flex: 1;
+  flex-direction: 'row';
+  border-width: 1px;
+}
+.windStatus{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border-radius: 16px;
+  padding: 16px;
+  margin-right: 8px;
+  border-width: 1px;
+  background-color:slategray;
+}
+.windStatusTitle {
+  color: #fff;
+}
+.windStatusValue {
+  color: #fff;
+  font-size: 32px;
+}
+.sunriseSunset{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border-radius: 16px;
+  padding: 16px;
+  border-width: 1px;
+  background-color:slategray;
+  margin-left: 8px;
+}
+.sunriseSunsetTitle {
+  color: #fff;
+}
+.sunriseSunsetBottomDiv {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.sunriseDiv {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.sunsetDiv {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.todaysHighlightBottomDiv {
+  display: flex;
+  flex: 1;
+  margin-top: 16px;
+}
+.BottomContainersDiv {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color:slategray;
+  border-radius: 16px;
+  padding: 16px;
+  margin-right: 16px;
 }

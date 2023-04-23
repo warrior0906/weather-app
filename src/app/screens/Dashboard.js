@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { SearchBar, Weather } from '../components';
+import { SearchBar, TodaysHighlight, Weather } from '../components';
 import './Dashboard.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLocation, setWeatherData } from '../store/Reducer';
@@ -45,7 +45,12 @@ export function Dashboard() {
                 Weather App
             </p>
             <SearchBar />
-            {weatherData?.main && <Weather />}
+            {weatherData?.main &&
+                <div className='body'>
+                    <Weather />
+                    <TodaysHighlight />
+                </div>
+            }
         </div>
     );
 }
