@@ -1,8 +1,11 @@
 .Dashboard {
-    text-align: center;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+  /* flex: auto; */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
 
 .Heading {
   text-align: left;
