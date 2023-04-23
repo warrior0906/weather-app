@@ -1,9 +1,15 @@
+import React from 'react'
 import './App.css';
-import Dashboard from './Screens/Dashboard';
+import Dashboard from './app/screens/Dashboard';
+
+import { store } from './app/store/Store';
+import { Provider } from 'react-redux'
 
 function App() {
   return (
-    <Dashboard />
+    <Provider store={store}>
+      <Dashboard />
+    </Provider>
   );
 }
 

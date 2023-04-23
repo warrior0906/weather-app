@@ -1,4 +1,4 @@
-import { SearchBar } from '../Components';
+import { SearchBar } from '../components';
 import './Dashboard.css';
 
 function Dashboard() {
