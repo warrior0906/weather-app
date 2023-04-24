@@ -24,7 +24,7 @@ export function TodaysHighlight() {
         // ------- set visibility in km ----------
         let vis = weatherData?.visibility;
         vis = vis / 1000;
-        setVisibility(vis + metaData?.todays_highlight_visibility_unit);
+        setVisibility(vis);
 
         // ------- set wind speed in km/h ----------
         let ws = weatherData?.wind?.speed;
@@ -35,24 +35,29 @@ export function TodaysHighlight() {
     const bottomData = [
         {
             title: metaData?.todays_highlight_humidity,
-            value: weatherData?.main?.humidity + metaData?.todays_highlight_humidity_unit,
+            value: weatherData?.main?.humidity,
+            suffix: metaData?.todays_highlight_humidity_unit,
         },
         {
             title: metaData?.todays_highlight_visibility,
             value: visibility,
+            suffix: metaData?.todays_highlight_visibility_unit,
         },
         {
             title: metaData?.todays_highlight_feels_like,
-            value: weatherData?.main?.feels_like + metaData?.todays_highlight_temperature_unit
+            value: Math.round(weatherData?.main?.feels_like) + metaData?.todays_highlight_degree_symbol,
         },
     ];
 
     const BottomContainers = (props) => {
-        const { title, value } = props;
+        const { title, value, suffix } = props;
         return (
             <div className='BottomContainersDiv'>
                 <p className='BottomContainersDivTitle'>{title}</p>
-                <p className='BottomContainersDivValue'>{value}</p>
+                <div className='BottomContainersDivValueContainer'>
+                    <p className='BottomContainersDivValue'>{value}</p>
+                    {suffix && <p className='BottomContainersDivSuffix'>{suffix}</p>}
+                </div>
             </div>
         );
     };
@@ -86,6 +91,7 @@ export function TodaysHighlight() {
                         <BottomContainers
                             title={e?.title}
                             value={e?.value}
+                            suffix={e?.suffix}
                         />
                     )
                 }

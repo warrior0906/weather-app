@@ -57,6 +57,7 @@
   color: #fff;
   width: 100%;
   height: fit-content;
+  margin-top: 0;
 }
 .todaysHighlightBody {
   display: flex;
@@ -147,8 +148,23 @@
 .BottomContainersDivTitle {
   color: #fff;
   margin: 0;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.BottomContainersDivValueContainer{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: flex-end;
 }
 .BottomContainersDivValue {
   color: #fff;
   margin: 0;
+  font-size: 22px;
+}
+.BottomContainersDivSuffix{
+  color: #fff;
+  margin: 0;
+  margin-bottom: 3px;
+  font-size: 10px;
 }

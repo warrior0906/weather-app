@@ -9,7 +9,7 @@ export function Weather() {
     return (
         <div className='weatherCard'>
             <p className='temperature'>
-                {weatherData?.main?.temp + metaData?.todays_highlight_temperature_unit}
+                {Math.round(weatherData?.main?.temp) + metaData?.todays_highlight_temperature_unit}
             </p>
             <p className='weather'>
                 {weatherData?.weather[0]?.main}
