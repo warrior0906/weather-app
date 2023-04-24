@@ -3,7 +3,7 @@ import { SearchBar, TodaysHighlight, Weather } from '../components';
 import './Dashboard.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLocation, setWeatherData } from '../store/Reducer';
-import { metaData } from '../utils';
+import { metaData, fetchLocation } from '../utils';
 
 
 export function Dashboard() {
@@ -14,17 +14,7 @@ export function Dashboard() {
     const dispatch = useDispatch();
     
     useEffect(() => {
-        const fetchLocation = async () => {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                const payload = {
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude,
-                }
-                dispatch(setLocation(payload));
-              });
-
-        }
-        fetchLocation();
+        fetchLocation(dispatch, setLocation);
     }, [dispatch]);
 
     useEffect(() => {
