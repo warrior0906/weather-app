@@ -3,6 +3,7 @@ import { SearchBar, TodaysHighlight, Weather } from '../components';
 import './Dashboard.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLocation, setWeatherData } from '../store/Reducer';
+import { metaData } from '../utils';
 
 
 export function Dashboard() {
@@ -42,7 +43,7 @@ export function Dashboard() {
     return (
         <div className='Dashboard'>
             <p className='Heading'>
-                Weather App
+                {metaData?.main_title}
             </p>
             <SearchBar />
             {weatherData?.main &&

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 import './Styles.css';
+import { metaData } from '../utils';
 
 export function TodaysHighlight() {
     const weatherData = useSelector((state) => state.weather.weatherData);
@@ -23,7 +24,7 @@ export function TodaysHighlight() {
         // ------- set visibility in km ----------
         let vis = weatherData?.visibility;
         vis = vis / 1000;
-        setVisibility(vis + ' km');
+        setVisibility(vis + metaData?.todays_highlight_visibility_unit);
 
         // ------- set wind speed in km/h ----------
         let ws = weatherData?.wind?.speed;
@@ -33,16 +34,16 @@ export function TodaysHighlight() {
 
     const bottomData = [
         {
-            title: "Humidity",
-            value: weatherData?.main?.humidity + '%',
+            title: metaData?.todays_highlight_humidity,
+            value: weatherData?.main?.humidity + metaData?.todays_highlight_humidity_unit,
         },
         {
-            title: "Visibility",
+            title: metaData?.todays_highlight_visibility,
             value: visibility,
         },
         {
-            title: "Feels like",
-            value: weatherData?.main?.feels_like + '°C',
+            title: metaData?.todays_highlight_feels_like,
+            value: weatherData?.main?.feels_like + metaData?.todays_highlight_temperature_unit
         },
     ];
 
@@ -59,22 +60,22 @@ export function TodaysHighlight() {
 
     return (
         <div className='todaysHighlight'>
-            <p className='todaysHighlightTitle'>Today's Highlight </p>
+            <p className='todaysHighlightTitle'>{metaData?.todays_highlight_title} </p>
             <div className='todaysHighlightBody'>
                 <div className='windStatus'>
-                    <p className='windStatusTitle'> Wind Status</p>
-                    <p className='windStatusValue'> {`${windSpeed} km/h`}</p>
+                    <p className='windStatusTitle'>{metaData?.todays_highlight_wind_status}</p>
+                    <p className='windStatusValue'> {`${windSpeed} ${metaData?.todays_highlight_wind_speed_unit}`}</p>
                 </div>
                 <div className='sunriseSunset'>
-                    <p className='sunriseSunsetTitle'>Sunrise & Sunset</p>
+                    <p className='sunriseSunsetTitle'>{metaData?.todays_highlight_sunrise_and_sunset}</p>
                     <div className='sunriseSunsetBottomDiv'>
                         <div className='sunriseDiv'>
-                            <p className='sunriseTitle'>Sunrise</p>
-                            <p  className='sunriseValue'>{sunriseTime}</p>
+                            <p className='sunriseTitle'>{metaData?.todays_highlight_sunrise}</p>
+                            <p className='sunriseValue'>{sunriseTime}</p>
                         </div>
                         <div className='sunsetDiv'>
-                            <p  className='sunsetTitle'> Sunset</p>
-                            <p  className='sunsetValue' >{sunsetTime}</p>
+                            <p className='sunsetTitle'>{metaData?.todays_highlight_sunset}</p>
+                            <p className='sunsetValue' >{sunsetTime}</p>
                         </div>
                     </div>
                 </div>
