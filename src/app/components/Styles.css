@@ -12,8 +12,9 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: 300px;
-  border-width: 1px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* height: 300px; */
   background-color:lightslategrey;
   border-radius: 16px;
   padding: 16px;
@@ -22,18 +23,22 @@
 }
 .temperature {
   font-size: 32px;
-  color: #fff
+  color: #fff;
+  margin: 0;
 }
 .weather {
   color: #fff;
+  margin: 0;
 }
 .location {
   color: #fff;
   border-width: 1px;
   width: 100%;
+  margin: 0;
 }
 .dateTime {
   color: #fff;
+  margin: 0;
 }
 
 /* today's highlight's styles */
@@ -71,10 +76,12 @@
 }
 .windStatusTitle {
   color: #fff;
+  margin: 0;
 }
 .windStatusValue {
   color: #fff;
   font-size: 32px;
+  margin: 0;
 }
 .sunriseSunset{
   display: flex;
@@ -88,6 +95,7 @@
 }
 .sunriseSunsetTitle {
   color: #fff;
+  margin: 0;
 }
 .sunriseSunsetBottomDiv {
   display: flex;
@@ -100,11 +108,27 @@
   flex: 1;
   flex-direction: column;
 }
+.sunriseTitle {
+  color: #fff;
+  margin: 0;
+}
+.sunriseValue {
+  color: #fff;
+  margin: 0;
+}
 .sunsetDiv {
   display: flex;
   flex: 1;
   flex-direction: column;
   align-items: flex-end;
+}
+.sunsetTitle {
+  color: #fff;
+  margin: 0;
+}
+.sunsetValue {
+  color: #fff;
+  margin: 0;
 }
 .todaysHighlightBottomDiv {
   display: flex;
@@ -119,4 +143,12 @@
   border-radius: 16px;
   padding: 16px;
   margin-right: 16px;
+}
+.BottomContainersDivTitle {
+  color: #fff;
+  margin: 0;
+}
+.BottomContainersDivValue {
+  color: #fff;
+  margin: 0;
 }
