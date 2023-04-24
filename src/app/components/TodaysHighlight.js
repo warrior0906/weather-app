@@ -29,6 +29,7 @@ export function TodaysHighlight() {
         // ------- set wind speed in km/h ----------
         let ws = weatherData?.wind?.speed;
         ws = (ws * 3600) / 1000;
+        ws = Math.round(ws * 100) / 100;
         setWindSpeed(ws)
     }, [weatherData]);
 
