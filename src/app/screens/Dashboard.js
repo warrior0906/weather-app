@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import { SearchBar, TodaysHighlight, Weather } from '../components';
 import './Dashboard.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { setLocation, getWeatherFetch } from '../store/reducerActions/weatherSlice';
+import { getWeatherFetch } from '../store/reducerActions/weatherSlice';
+import { setLocation } from '../store/reducerActions/locationSlice';
 import { metaData, fetchLocation } from '../utils';
 
 
 export function Dashboard() {
 
-    const currentLocation = useSelector((state) => state.weather.currentLocation);
+    const currentLocation = useSelector((state) => state.location.currentLocation);
     const weatherData = useSelector((state) => state.weather.weatherData);
 
     const dispatch = useDispatch();
