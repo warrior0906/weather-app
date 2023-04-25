@@ -1,33 +1,26 @@
 import React, { useEffect } from 'react';
-import { SearchBar, TodaysHighlight, Weather } from '../components';
-import './Dashboard.css';
 import { useSelector, useDispatch } from 'react-redux';
+import { SearchBar, TodaysHighlight, Weather } from '../components';
 import { getWeatherFetch } from '../store/reducerActions/weatherSlice';
 import { setLocation } from '../store/reducerActions/locationSlice';
-import { metaData, fetchLocation } from '../utils';
-
+import { metaData } from '../utils';
+import './Dashboard.css';
 
 export function Dashboard() {
 
-    const currentLocation = useSelector((state) => state.location.currentLocation);
     const weatherData = useSelector((state) => state.weather.weatherData);
-
     const dispatch = useDispatch();
     
     useEffect(() => {
-        fetchLocation(dispatch, setLocation);
-    }, [dispatch]);
-
-    useEffect(() => {
-        const fetchData = () => {
+        navigator.geolocation.getCurrentPosition(function (position) {
             const payload = {
-                latitude: currentLocation?.latitude,
-                longitude: currentLocation?.longitude,
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
             }
+            dispatch(setLocation(payload));
             dispatch(getWeatherFetch(payload));
-        }
-        currentLocation && fetchData();
-    }, [currentLocation, dispatch]);
+        });
+    }, [dispatch]);
 
     return (
         <div className='Dashboard'>
