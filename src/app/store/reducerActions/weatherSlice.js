@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   currentLocation: null,
   weatherData: null,
+  loading: false,
 };
 
 export const WeatherSlice = createSlice({
@@ -15,13 +16,20 @@ export const WeatherSlice = createSlice({
         longitude: action.payload.longitude,
       };
     },
-    setWeatherData: (state, action) => {
+    getWeatherFetch: (state) => {
+      state.loading = true;
+    },
+    getWeatherSuccess: (state, action) => {
       state.weatherData = action.payload;
+      state.loading = false;
+    },
+    getWeatherFailure: (state, action) => {
+      state.loading = false;
     }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setLocation, setWeatherData } = WeatherSlice.actions;
+export const { setLocation, getWeatherFetch, getWeatherSuccess, getWeatherFailure } = WeatherSlice.actions;
 
 export default WeatherSlice.reducer;

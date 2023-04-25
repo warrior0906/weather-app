@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { SearchBar, TodaysHighlight, Weather } from '../components';
 import './Dashboard.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { setLocation, setWeatherData } from '../store/Reducer';
+import { setLocation, getWeatherFetch } from '../store/reducerActions/weatherSlice';
 import { metaData, fetchLocation } from '../utils';
 
 
@@ -18,16 +18,14 @@ export function Dashboard() {
     }, [dispatch]);
 
     useEffect(() => {
-        const fetchData = async () => {
-            await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${currentLocation.latitude}&lon=${currentLocation.longitude}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
-                .then(res => res.json())
-                .then(result => {
-                    dispatch(setWeatherData(result));
-                    console.log('result==>>', result);
-                });
+        const fetchData = () => {
+            const payload = {
+                latitude: currentLocation?.latitude,
+                longitude: currentLocation?.longitude,
+            }
+            dispatch(getWeatherFetch(payload));
         }
         currentLocation && fetchData();
-        console.log('currentLocation', currentLocation);
     }, [currentLocation, dispatch]);
 
     return (
