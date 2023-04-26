@@ -19,11 +19,11 @@ export function TodaysHighlight() {
     }, [city, weatherData, cityWeatherData]);
 
     useEffect(() => {
-        setSunriseTime(formatTime(data?.sys?.sunrise));
-        setSunsetTime(formatTime(data?.sys?.sunset));
+        setSunriseTime(formatTime(data?.sys?.sunrise, data?.timezone));
+        setSunsetTime(formatTime(data?.sys?.sunset, data?.timezone));
         setWindSpeed(changeSpeedUnit(data?.wind?.speed));
-        setBottomData(todayHighlightBottomData(data));
-    }, [data]);
+        data && setBottomData(todayHighlightBottomData(data, city));
+    }, [data, city]);
 
 
     const BottomContainers = (props) => {

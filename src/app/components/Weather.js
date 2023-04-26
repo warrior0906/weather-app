@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
-import { metaData } from '../utils';
+import { metaData, temp } from '../utils';
 import './styles/weather.css';
 
 export function Weather() {
@@ -20,7 +20,7 @@ export function Weather() {
             {data
                 ? <div className='weatherCard'>
                     <p className='temperature'>
-                        {Math.round(data?.main?.temp) + metaData?.todays_highlight_temperature_unit}
+                        {Math.round(data?.main?.temp - (city ? temp : 0)) + metaData?.todays_highlight_temperature_unit}
                     </p>
                     <p className='weather'>
                         {data?.weather[0]?.main}
@@ -29,7 +29,7 @@ export function Weather() {
                         {data?.name}, {data?.sys?.country}
                     </p>
                     <p className='dateTime'>
-                        {moment().format('MMMM Do YYYY, h:mm A')}
+                        {moment(new Date(data?.dt) * 1000).format('MMMM Do YYYY, h:mm A')}
                     </p>
                 </div >
                 : <div className='weatherLoading'>

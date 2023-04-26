@@ -18,7 +18,9 @@ export const metaData = {
     search_bar_placeholder: 'Search City',
 };
 
-export const todayHighlightBottomData = (data) => [
+export const temp = 273.15;
+
+export const todayHighlightBottomData = (data, city) => [
     {
         title: metaData?.todays_highlight_humidity,
         value: data?.main?.humidity,
@@ -31,6 +33,6 @@ export const todayHighlightBottomData = (data) => [
     },
     {
         title: metaData?.todays_highlight_feels_like,
-        value: Math.round(data?.main?.feels_like) + metaData?.todays_highlight_degree_symbol,
+        value: Math.round(data?.main?.feels_like - (city ? temp : 0)) + metaData?.todays_highlight_degree_symbol,
     },
 ];
