@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { SearchBar, TodaysHighlight, Weather } from '../components';
 import { getWeatherFetch } from '../store/reducerActions/weatherSlice';
 import { setLocation } from '../store/reducerActions/locationSlice';
+import { getForecastFetch } from '../store/reducerActions/forecastSlice';
 import { metaData } from '../utils';
 import './Dashboard.css';
 
@@ -19,6 +20,7 @@ export function Dashboard() {
             }
             dispatch(setLocation(payload));
             dispatch(getWeatherFetch(payload));
+            dispatch(getForecastFetch(payload));
         });
     }, [dispatch]);
 
