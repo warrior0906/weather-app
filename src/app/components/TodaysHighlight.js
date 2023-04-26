@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import moment from 'moment';
+import { metaData, formatTime, changeSpeedUnit, todayHighlightBottomData } from '../utils';
 import './styles/todaysHighlight.css';
-import { metaData } from '../utils';
 
 export function TodaysHighlight() {
     const city = useSelector((state) => state.location.city);
@@ -10,53 +9,22 @@ export function TodaysHighlight() {
     const cityWeatherData = useSelector((state) => state.weather.cityWeatherData);
 
     const [data, setData] = useState(null);
+    const [bottomData, setBottomData] = useState(null);
+    const [sunriseTime, setSunriseTime] = useState(null);
+    const [sunsetTime, setSunsetTime] = useState(null);
+    const [windSpeed, setWindSpeed] = useState(null);
 
     useEffect(() => {
         setData(city ? cityWeatherData : weatherData);
     }, [city, weatherData, cityWeatherData]);
 
-    const [sunriseTime, setSunriseTime] = useState(null);
-    const [sunsetTime, setSunsetTime] = useState(null);
-    const [visibility, setVisibility] = useState(null);
-    const [windSpeed, setWindSpeed] = useState(null);
-
     useEffect(() => {
-        // ------- set sunrise time ---------
-        const sunrise = new Date(data?.sys?.sunrise * 1000);
-        setSunriseTime(moment(sunrise).format('h:mm A'));
-
-        // ------- set sunset time ---------
-        const sunset = new Date(data?.sys?.sunset * 1000);
-        setSunsetTime(moment(sunset).format('h:mm A'));
-
-        // ------- set visibility in km ----------
-        let vis = data?.visibility;
-        vis = vis / 1000;
-        setVisibility(vis);
-
-        // ------- set wind speed in km/h ----------
-        let ws = data?.wind?.speed;
-        ws = (ws * 3600) / 1000;
-        ws = Math.round(ws * 100) / 100;
-        setWindSpeed(ws)
+        setSunriseTime(formatTime(data?.sys?.sunrise));
+        setSunsetTime(formatTime(data?.sys?.sunset));
+        setWindSpeed(changeSpeedUnit(data?.wind?.speed));
+        setBottomData(todayHighlightBottomData(data));
     }, [data]);
 
-    const bottomData = [
-        {
-            title: metaData?.todays_highlight_humidity,
-            value: data?.main?.humidity,
-            suffix: metaData?.todays_highlight_humidity_unit,
-        },
-        {
-            title: metaData?.todays_highlight_visibility,
-            value: visibility,
-            suffix: metaData?.todays_highlight_visibility_unit,
-        },
-        {
-            title: metaData?.todays_highlight_feels_like,
-            value: Math.round(data?.main?.feels_like) + metaData?.todays_highlight_degree_symbol,
-        },
-    ];
 
     const BottomContainers = (props) => {
         const { title, value, suffix } = props;
@@ -64,13 +32,12 @@ export function TodaysHighlight() {
             <div className='BottomContainersDiv'>
                 <p className='BottomContainersDivTitle'>{title}</p>
                 <div className='BottomContainersDivValueContainer'>
-                    <p className='BottomContainersDivValue'>{value}</p>
+                    {value && <p className='BottomContainersDivValue'>{value}</p>}
                     {suffix && <p className='BottomContainersDivSuffix'>{suffix}</p>}
                 </div>
             </div>
         );
     };
-
 
     return (
         <>
@@ -97,7 +64,7 @@ export function TodaysHighlight() {
                         </div>
                     </div>
                     <div className='todaysHighlightBottomDiv'>
-                        {
+                        {bottomData ?
                             bottomData?.map((e) =>
                                 <BottomContainers
                                     title={e?.title}
@@ -105,6 +72,7 @@ export function TodaysHighlight() {
                                     suffix={e?.suffix}
                                 />
                             )
+                            : <p>Loading....</p>
                         }
                     </div>
                 </div>
