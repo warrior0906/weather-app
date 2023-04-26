@@ -2,9 +2,7 @@ import moment from "moment";
 
 //TODO: format time in 12hrs AM-PM
 export const formatTime = (time, timezone) => {
-    let currTimezone = 19800;
-    currTimezone -= timezone;
-    console.log('currTimezone', currTimezone)
+    const currTimezone = 19800 - timezone;
     time = new Date((time - currTimezone) * 1000);
     time = moment(time).format('h:mm A');
     return time;
