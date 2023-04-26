@@ -4,6 +4,7 @@ const initialState = {
   weatherData: null,
   cityWeatherData: null,
   loading: false,
+  cityFound: null,
 };
 
 export const WeatherSlice = createSlice({
@@ -26,9 +27,12 @@ export const WeatherSlice = createSlice({
     getCityWeatherSuccess: (state, action) => {
       state.cityWeatherData = action.payload;
       state.loading = false;
+      state.cityFound = true;
     },
     getCityWeatherFailure: (state) => {
       state.loading = false;
+      state.cityFound = false;
+      state.cityWeatherData = null;
     },
   },
 });
