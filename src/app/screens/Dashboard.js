@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SearchBar, TodaysHighlight, Weather } from '../components';
-import { getWeatherFetch } from '../store/reducerActions/weatherSlice';
+import { getWeatherFetch, getCityWeatherFetch } from '../store/reducerActions/weatherSlice';
 import { setLocation } from '../store/reducerActions/locationSlice';
 import { getForecastFetch } from '../store/reducerActions/forecastSlice';
 import { metaData } from '../utils';
@@ -21,6 +21,9 @@ export function Dashboard() {
             dispatch(setLocation(payload));
             dispatch(getWeatherFetch(payload));
             dispatch(getForecastFetch(payload));
+            dispatch(getCityWeatherFetch({
+                city: 'Kanpur'
+            }));
         });
     }, [dispatch]);
 
