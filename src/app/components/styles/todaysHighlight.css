@@ -133,3 +133,15 @@
   margin-bottom: 3px;
   font-size: 10px;
 }
+.todaysHighlightLoading{
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:slategray;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+  margin-left: 8px;
+}

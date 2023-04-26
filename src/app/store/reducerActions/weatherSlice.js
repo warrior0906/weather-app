@@ -23,6 +23,7 @@ export const WeatherSlice = createSlice({
     },
     getCityWeatherFetch: (state) => {
       state.loading = true;
+      state.cityFound = null;
     },
     getCityWeatherSuccess: (state, action) => {
       state.cityWeatherData = action.payload;
