@@ -19,7 +19,7 @@ function* weatherSaga(action) {
 
 function* weatherCitySaga(action) {
     const data = yield call(() => fetch(
-        `${process.env.REACT_APP_API_URL}/weather?q=${action.payload.city}&appid=${process.env.REACT_APP_API_KEY}`
+        `${process.env.REACT_APP_API_URL}/weather?q=${action.payload}&appid=${process.env.REACT_APP_API_KEY}`
     ));
     const formattedData = yield data.json();
     yield put(getCityWeatherSuccess(formattedData));

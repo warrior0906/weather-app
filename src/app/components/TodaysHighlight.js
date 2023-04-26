@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
-import './Styles.css';
+import './styles/todaysHighlight.css';
 import { metaData } from '../utils';
 
 export function TodaysHighlight() {

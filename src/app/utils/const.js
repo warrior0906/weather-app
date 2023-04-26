@@ -13,4 +13,5 @@ export const metaData = {
     todays_highlight_feels_like: 'Feels like',
     todays_highlight_temperature_unit: '°C',
     todays_highlight_degree_symbol: '°',
+    search_bar_placeholder: 'Search City',
 };
