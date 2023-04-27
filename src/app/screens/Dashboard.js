@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { SearchBar, TodaysHighlight, Weather } from '../components';
+import { Forecast, SearchBar, TodaysHighlight, Weather } from '../components';
 import { getWeatherFetch } from '../store/reducerActions/weatherSlice';
 import { setLocation } from '../store/reducerActions/locationSlice';
 import { getForecastFetch } from '../store/reducerActions/forecastSlice';
@@ -10,6 +10,7 @@ import './Dashboard.css';
 export function Dashboard() {
 
     const weatherData = useSelector((state) => state.weather.weatherData);
+    const forecastData = useSelector((state) => state.forecast.forecastData);
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -36,6 +37,10 @@ export function Dashboard() {
                     <TodaysHighlight />
                 </div>
             }
+            {forecastData?.list?.length > 0 &&
+                <div className='body'>
+                    <Forecast />
+                </div>}
         </div>
     );
 }

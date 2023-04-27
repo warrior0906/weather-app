@@ -19,6 +19,8 @@ export const metaData = {
 };
 
 export const temp = 273.15;
+export const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+export const dayList = [1, 2, 3, 4, 5];
 
 export const todayHighlightBottomData = (data, city) => [
     {

@@ -1,0 +1,71 @@
+.forecast {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 16px;
+    margin-right: 16px;
+}
+.header {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+}
+.heading{
+    color: #fff;
+    margin: 0;
+    font-size: 14px;
+}
+.daySelect{
+    margin: 16;
+    border-radius: 16px;
+    border-color: black;
+    background-color: black;
+    color: #fff;
+    padding: 4px;
+}
+._5daysForecast {
+    margin: 0;
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: lightslategrey;
+}
+.renderWeatherForecast{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 16px;
+}
+.forecastWeather{
+    display: flex;
+    flex: 1;
+    margin: 0;
+    color: #fff;
+    font-size: 12px;
+}
+.forecastTemp{
+    display: flex;
+    flex: 1;
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+.forecastDate{
+    display: flex;
+    flex: 1;
+    margin: 0;
+    color: #fff;
+    font-size: 12px;
+}
+.forecastDay{
+    display: flex;
+    flex: 1;
+    margin: 0;
+    color: #fff;
+    font-size: 12px;
+}

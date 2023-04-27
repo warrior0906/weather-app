@@ -1,14 +1,14 @@
 .Dashboard {
-  flex: auto;
+  display: flex;
   flex: 1;
-  /* background-color: #191B1F; */
-  padding-left: 16px;
-  padding-right: 16px;
+  flex-direction: column;
+  background-color: #242c3d;
+  padding: 16px;
+  margin: 0;
 }
-
 .Heading {
   text-align: left;
-  color: #808080;
+  color: #ffff;
 }
 .body {
   display: flex;
