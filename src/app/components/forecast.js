@@ -5,15 +5,17 @@ import { metaData, temp, dayList, days } from '../utils';
 import './styles/forecast.css';
 
 export function Forecast() {
+    const city = useSelector((state) => state.location.city);
     const _5daysForecast = useSelector((state) => state.forecast._5daysForecast);
-    const forecastData = useSelector((state) => state.forecast.forecastData);
+    const _5daysCityForecast = useSelector((state) => state.forecast._5daysCityForecast);
 
     const [numOfDays, setNumOfDays] = useState(5);
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        setData(_5daysForecast?.slice(0, numOfDays));
-    }, [numOfDays, _5daysForecast]);
+        setData(city ? _5daysCityForecast : _5daysForecast);
+        setNumOfDays(5);
+    }, [city, _5daysForecast, _5daysCityForecast]);
 
     const WeatherForecast = (props) => {
         const { item } = props;
@@ -44,7 +46,10 @@ export function Forecast() {
                 <select
                     className='daySelect'
                     value={`${numOfDays} days`}
-                    onChange={e => setNumOfDays(e.target.value.match(/\d+/)[0])}
+                    onChange={e => {
+                        setNumOfDays(e.target.value.match(/\d+/)[0]);
+                        setData(data?.slice(0, e.target.value.match(/\d+/)[0]));
+                    }}
                 >
                     {dayList?.map((e) =>
                         <option key={e}>
