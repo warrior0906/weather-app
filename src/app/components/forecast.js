@@ -9,6 +9,11 @@ export function Forecast() {
     const forecastData = useSelector((state) => state.forecast.forecastData);
 
     const [numOfDays, setNumOfDays] = useState(5);
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        setData(_5daysForecast?.slice(0, numOfDays));
+    }, [numOfDays, _5daysForecast]);
 
     const WeatherForecast = (props) => {
         const { item } = props;
@@ -50,7 +55,7 @@ export function Forecast() {
             </div>
             <div className='_5daysForecast'>
                 {
-                    _5daysForecast?.map((item) =>
+                    data?.map((item) =>
                         <WeatherForecast item={item} />
                     )
                 }
