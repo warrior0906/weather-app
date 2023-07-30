@@ -1,0 +1,32 @@
+@import "./colors.scss";
+
+@mixin display-flex {
+    display: flex;
+    flex: 1;
+}
+
+@mixin container {
+  background-color: $background_secondary_1;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+@mixin todays-highlight-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: $background_secondary_1;
+  border-radius: 16px;
+  padding: 16px;
+  margin-right: 8px;
+}
+
+@mixin weather-text {
+  color: $text;
+  font-size: 12px;
+  margin: 0;
+  margin-left: 10px;
+  margin-bottom: 12px;
+}
+

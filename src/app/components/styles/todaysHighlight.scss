@@ -1,13 +1,11 @@
-@import "../../utils/colors.scss";
+@import "../../utils/scss";
 
 .todaysHighlight {
+  @include container;
   display: flex;
   flex: 3;
   flex-direction: column;
   background-color: $background_secondary_2;
-  border-radius: 16px;
-  padding: 16px;
-  margin-top: 16px;
   margin-left: 8px;
 }
 .todaysHighlightTitle {
@@ -17,20 +15,11 @@
   font-size: 13px;
 }
 .todaysHighlightBody {
-  display: flex;
-  flex: 1;
-  flex-direction: 'row';
-  border-width: 1px;
+  @include display-flex;
+  flex-direction: "row";
 }
-.windStatus{
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  border-radius: 16px;
-  padding: 16px;
-  margin-right: 8px;
-  border-width: 1px;
-  background-color: $background_primary_2;
+.windStatus {
+  @include todays-highlight-container;
 }
 .windStatusTitle {
   color: $text;
@@ -43,15 +32,8 @@
   font-size: 22px;
   margin: 0;
 }
-.sunriseSunset{
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  border-radius: 16px;
-  padding: 16px;
-  border-width: 1px;
-  background-color: $background_primary_2;
-  margin-left: 8px;
+.sunriseSunset {
+  @include todays-highlight-container;
 }
 .sunriseSunsetTitle {
   color: $text;
@@ -60,14 +42,12 @@
   font-size: 14px;
 }
 .sunriseSunsetBottomDiv {
-  display: flex;
-  flex: 1;
+  @include display-flex;
   flex-direction: row;
   justify-content: space-around;
 }
 .sunriseDiv {
-  display: flex;
-  flex: 1;
+  @include display-flex;
   flex-direction: column;
 }
 .sunriseTitle {
@@ -82,8 +62,7 @@
   font-weight: 700;
 }
 .sunsetDiv {
-  display: flex;
-  flex: 1;
+  @include display-flex;
   flex-direction: column;
   align-items: flex-end;
 }
@@ -99,18 +78,11 @@
   font-weight: 700;
 }
 .todaysHighlightBottomDiv {
-  display: flex;
-  flex: 1;
+  @include display-flex;
   margin-top: 16px;
 }
 .BottomContainersDiv {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  background-color:$background_primary_2;
-  border-radius: 16px;
-  padding: 16px;
-  margin-right: 16px;
+  @include todays-highlight-container;
 }
 .BottomContainersDivTitle {
   color: $text;
@@ -118,9 +90,8 @@
   margin-bottom: 8px;
   font-size: 12px;
 }
-.BottomContainersDivValueContainer{
-  display: flex;
-  flex: 1;
+.BottomContainersDivValueContainer {
+  @include display-flex;
   flex-direction: row;
   align-items: flex-end;
 }
@@ -129,21 +100,18 @@
   margin: 0;
   font-size: 22px;
 }
-.BottomContainersDivSuffix{
+.BottomContainersDivSuffix {
   color: $text;
   margin: 0;
   margin-bottom: 3px;
   font-size: 10px;
 }
-.todaysHighlightLoading{
+.todaysHighlightLoading {
+  @include container;
   display: flex;
   flex: 3;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:$background_primary_2;
-  border-radius: 16px;
-  padding: 16px;
-  margin-top: 16px;
   margin-left: 8px;
 }

@@ -1,14 +1,10 @@
-@import "../utils/colors.scss";
+@import "../utils/scss";
 
 .Dashboard {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
   background-color: $background_primary_1;
   padding: 16px;
-  margin: 0;
 }
-.Heading {
+h1 {
   text-align: left;
   color: $text;
 }

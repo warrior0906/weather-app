@@ -1,57 +1,38 @@
-@import "../../utils/colors.scss";
+@import "../../utils/scss";
 
 .weatherCard {
-  display: flex;
-  flex: 1;
+  @include display-flex;
+  @include container;
   flex-direction: column;
   justify-content: flex-end;
-  background-color: $background_secondary_1;
-  border-radius: 16px;
-  padding: 16px;
-  margin-top: 16px;
   margin-right: 8px;
 }
 .temperature {
   font-size: 40px;
   color: $text;
   margin: 0;
+  margin-bottom: 12px;
 }
 .weather {
+  @include weather-text;
   width: 100%;
-  color: $text;
-  margin: 0;
   font-size: 14px;
-  margin-top: 12px;
-  margin-bottom: 12px;
 }
 .location {
-  color: $text;
-  border-width: 1px;
+  @include weather-text;
   width: 100%;
-  margin: 0;
-  margin-left: 10px;
-  margin-bottom: 12px;
-  font-size: 12px;
 }
 .calendar {
-  display: flex;
+  @include display-flex;
   margin-bottom: 10px;
 }
 .dateTime {
-  color: $text;
-  margin: 0;
-  margin-left: 10px;
-  margin-bottom: 12px;
-  font-size: 12px;
+  @include weather-text;
 }
 .weatherLoading {
-  display: flex;
-  flex: 1;
+  @include display-flex;
+  @include container;
   justify-content: center;
   align-items: center;
-  background-color: $background_secondary_1;
-  border-radius: 16px;
-  padding: 16px;
-  margin-top: 16px;
   margin-right: 8px;
 }
