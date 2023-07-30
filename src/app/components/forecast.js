@@ -48,7 +48,8 @@ export function Forecast() {
                     value={`${numOfDays} days`}
                     onChange={e => {
                         setNumOfDays(e.target.value.match(/\d+/)[0]);
-                        setData(data?.slice(0, e.target.value.match(/\d+/)[0]));
+                        const d = city ? _5daysCityForecast : _5daysForecast;
+                        setData(d?.slice(0, e.target.value.match(/\d+/)[0]));
                     }}
                 >
                     {dayList?.map((e) =>
