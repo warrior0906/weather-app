@@ -22,7 +22,7 @@ export function Weather() {
           metaData?.todays_highlight_temperature_unit}
       </p>
       <p className="weather">{data?.weather[0]?.main}</p>
-      <div className="calendar">
+      <div className="wrapper">
         <img
           src={require("../assets/images/location.png")}
           alt="location"
@@ -32,7 +32,7 @@ export function Weather() {
           {data?.name}, {data?.sys?.country}
         </p>
       </div>
-      <div className="calendar">
+      <div className="wrapper">
         <img
           src={require("../assets/images/calendar.png")}
           alt="calendar"

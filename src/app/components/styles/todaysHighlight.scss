@@ -2,11 +2,10 @@
 
 .todaysHighlight {
   @include container;
+  background-color: $background_secondary_2;
   display: flex;
   flex: 3;
   flex-direction: column;
-  background-color: $background_secondary_2;
-  margin-left: 8px;
 }
 .todaysHighlightTitle {
   color: $text;
@@ -18,28 +17,22 @@
   @include display-flex;
   flex-direction: "row";
 }
-.windStatus {
+.topContainer {
   @include todays-highlight-container;
+  justify-content: space-between;
 }
 .windStatusTitle {
   color: $text;
-  margin: 0;
-  margin-bottom: 12px;
   font-size: 14px;
+  margin: 0;
 }
 .windStatusValue {
-  color: $text;
+  @extend .windStatusTitle;
   font-size: 22px;
-  margin: 0;
-}
-.sunriseSunset {
-  @include todays-highlight-container;
 }
 .sunriseSunsetTitle {
-  color: $text;
-  margin: 0;
+  @extend .windStatusTitle;  
   margin-bottom: 12px;
-  font-size: 14px;
 }
 .sunriseSunsetBottomDiv {
   @include display-flex;
@@ -107,11 +100,7 @@
   font-size: 10px;
 }
 .todaysHighlightLoading {
-  @include container;
-  display: flex;
-  flex: 3;
-  flex-direction: column;
+  @extend .todaysHighlight;
   justify-content: center;
   align-items: center;
-  margin-left: 8px;
 }

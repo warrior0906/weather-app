@@ -3,7 +3,6 @@
 .forecast {
   @include display-flex;
   flex-direction: column;
-  margin: 0;
   margin-top: 16px;
   margin-right: 16px;
 }
@@ -15,16 +14,16 @@
 }
 .heading {
   color: $text;
-  margin: 0;
-  font-size: 14px;
+  margin-left: 12px;
+  font-size: 16px;
 }
 .daySelect {
-  margin: 16;
+  margin: 16px;
   border-radius: 16px;
   border-color: $border;
   background-color: $border;
   color: $text;
-  padding: 4px;
+  padding: 6px;
 }
 ._5daysForecast {
   @include container;
@@ -41,19 +40,7 @@
   margin: 0;
 }
 .forecastTemp {
-  @include display-flex;
-  margin: 0;
-  color: $text;
+  @extend .forecastWeather;
   font-size: 20px;
   font-weight: 600;
-}
-.forecastDate {
-  @include display-flex;
-  @include weather-text;
-  margin: 0;
-}
-.forecastDay {
-  @include display-flex;
-  @include weather-text;
-  margin: 0;
 }

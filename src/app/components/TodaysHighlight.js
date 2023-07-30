@@ -49,7 +49,7 @@ export function TodaysHighlight() {
         {metaData?.todays_highlight_title}{" "}
       </p>
       <div className="todaysHighlightBody">
-        <div className="windStatus">
+        <div className="topContainer">
           <p className="windStatusTitle">
             {metaData?.todays_highlight_wind_status}
           </p>
@@ -58,7 +58,7 @@ export function TodaysHighlight() {
             {`${windSpeed} ${metaData?.todays_highlight_wind_speed_unit}`}
           </p>
         </div>
-        <div className="sunriseSunset">
+        <div className="topContainer">
           <p className="sunriseSunsetTitle">
             {metaData?.todays_highlight_sunrise_and_sunset}
           </p>

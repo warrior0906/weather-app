@@ -29,10 +29,10 @@ export function Forecast() {
                     +{Math.round(item?.main?.temp_max - temp) + metaData?.todays_highlight_degree_symbol}
                     {/* /{Math.round(item?.main?.temp_min - temp) + metaData?.todays_highlight_degree_symbol} */}
                 </p>
-                <p className='forecastDate'>
+                <p className='forecastWeather'>
                     {moment(new Date(item?.dt) * 1000).format('D MMMM')}
                 </p>
-                <p className='forecastDay'>
+                <p className='forecastWeather'>
                     {days[date.getDay()]}
                 </p>
             </div>
