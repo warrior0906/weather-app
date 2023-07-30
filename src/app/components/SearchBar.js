@@ -4,7 +4,7 @@ import { getCityWeatherFetch } from '../store/reducerActions/weatherSlice';
 import { getCityForecastFetch } from '../store/reducerActions/forecastSlice';
 import { setCity } from '../store/reducerActions/locationSlice';
 import { metaData } from '../utils/const';
-import './styles/searchBar.css';
+import './styles/searchBar.scss';
 
 export function SearchBar() {
     const city = useSelector((state) => state.location.city);

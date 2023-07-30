@@ -1,0 +1,46 @@
+@import "../../utils/scss";
+
+.forecast {
+  @include display-flex;
+  flex-direction: column;
+  margin-top: 16px;
+  margin-right: 16px;
+}
+.header {
+  @include display-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+}
+.heading {
+  color: $text;
+  margin-left: 12px;
+  font-size: 16px;
+}
+.daySelect {
+  margin: 16px;
+  border-radius: 16px;
+  border-color: $border;
+  background-color: $border;
+  color: $text;
+  padding: 6px;
+}
+._5daysForecast {
+  @include container;
+}
+.renderWeatherForecast {
+  @include display-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 16px;
+}
+.forecastWeather {
+  @include display-flex;
+  @include weather-text;
+  margin: 0;
+}
+.forecastTemp {
+  @extend .forecastWeather;
+  font-size: 20px;
+  font-weight: 600;
+}

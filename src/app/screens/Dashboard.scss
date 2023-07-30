@@ -1,0 +1,14 @@
+@import "../utils/scss";
+
+.Dashboard {
+  background-color: $background_primary_1;
+  padding: 16px;
+}
+h1 {
+  text-align: left;
+  color: $text;
+}
+.body {
+  @include display-flex;
+  flex-direction: row;
+}

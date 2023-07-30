@@ -1,0 +1,38 @@
+@import "../../utils/scss";
+
+.weatherCard {
+  @include display-flex;
+  @include container;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.temperature {
+  font-size: 40px;
+  color: $text;
+  margin: 0;
+  margin-bottom: 12px;
+}
+.weather {
+  @include weather-text;
+  width: 100%;
+  font-size: 14px;
+}
+.wrapper {
+  @include display-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.location {
+  @include weather-text;
+  width: 100%;
+}
+.dateTime {
+  @include weather-text;
+}
+.weatherLoading {
+  @extend .weatherCard;
+  justify-content: center;
+  align-items: center;
+}

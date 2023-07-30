@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 import { metaData, temp, dayList, days } from '../utils';
-import './styles/forecast.css';
+import './styles/forecast.scss';
 
 export function Forecast() {
     const city = useSelector((state) => state.location.city);
@@ -29,10 +29,10 @@ export function Forecast() {
                     +{Math.round(item?.main?.temp_max - temp) + metaData?.todays_highlight_degree_symbol}
                     {/* /{Math.round(item?.main?.temp_min - temp) + metaData?.todays_highlight_degree_symbol} */}
                 </p>
-                <p className='forecastDate'>
+                <p className='forecastWeather'>
                     {moment(new Date(item?.dt) * 1000).format('D MMMM')}
                 </p>
-                <p className='forecastDay'>
+                <p className='forecastWeather'>
                     {days[date.getDay()]}
                 </p>
             </div>
@@ -48,7 +48,8 @@ export function Forecast() {
                     value={`${numOfDays} days`}
                     onChange={e => {
                         setNumOfDays(e.target.value.match(/\d+/)[0]);
-                        setData(data?.slice(0, e.target.value.match(/\d+/)[0]));
+                        const d = city ? _5daysCityForecast : _5daysForecast;
+                        setData(d?.slice(0, e.target.value.match(/\d+/)[0]));
                     }}
                 >
                     {dayList?.map((e) =>
