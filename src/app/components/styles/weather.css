@@ -1,51 +1,55 @@
 .weatherCard {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    background-color:lightslategrey;
-    border-radius: 16px;
-    padding: 16px;
-    margin-top: 16px;
-    margin-right: 8px;
-  }
-  .temperature {
-    font-size: 40px;
-    color: #fff;
-    margin: 0;
-  }
-  .weather {
-    width: 100%;
-    color: #fff;
-    margin: 0;
-    font-size: 14px;
-    margin-top: 12px;
-    margin-bottom: 12px;
-  }
-  .location {
-    color: #fff;
-    border-width: 1px;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 12px;
-    font-size: 12px;
-  }
-  .dateTime {
-    color: #fff;
-    margin: 0;
-    margin-bottom: 12px;
-    font-size: 12px;
-  }
-  .weatherLoading {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    background-color:lightslategrey;
-    border-radius: 16px;
-    padding: 16px;
-    margin-top: 16px;
-    margin-right: 8px;
-  }
-  
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: lightslategrey;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+  margin-right: 8px;
+}
+.temperature {
+  font-size: 40px;
+  color: #fff;
+  margin: 0;
+}
+.weather {
+  width: 100%;
+  color: #fff;
+  margin: 0;
+  font-size: 14px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.location {
+  color: #fff;
+  border-width: 1px;
+  width: 100%;
+  margin: 0;
+  margin-left: 10px;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+.calendar {
+  display: flex;
+  margin-bottom: 10px;
+}
+.dateTime {
+  color: #fff;
+  margin: 0;
+  margin-left: 10px;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+.weatherLoading {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: lightslategrey;
+  border-radius: 16px;
+  padding: 16px;
+  margin-top: 16px;
+  margin-right: 8px;
+}
