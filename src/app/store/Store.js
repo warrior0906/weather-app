@@ -7,7 +7,7 @@ import ForecastSlice from './reducerActions/forecastSlice';
 
 const sagaMiddle = createSagaMiddleware();
 
-export const store = configureStore({
+export const createStore = () => configureStore({
   reducer: {
     weather: WeatherSlice,
     location: LocationSlice,
@@ -15,4 +15,7 @@ export const store = configureStore({
   },
   middleware: [sagaMiddle],
 });
+
+export const store = createStore();
+
 sagaMiddle.run(rootSaga);

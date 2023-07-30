@@ -1,31 +1,51 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, cleanup, renderHook } from "@testing-library/react";
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event';
+import { Provider } from "react-redux";
+import { createStore } from "../../../src/app/store/Store";
 import { SearchBar } from "../../../src/app/components/SearchBar";
 
 describe("Search Bar component", () => {
+    const produceComponent = () =>
+        render(
+            <Provider store={createStore()}>
+                <SearchBar />
+            </Provider>
+        );
+     
+    afterEach(() => {
+        cleanup();
+    });
 
     it("should render Search Bar component correctly", () => {
-        render(<SearchBar />);
+        produceComponent();
     });
 
     it("should render input box correctly", () => {
-        render(<SearchBar />)
+        produceComponent();
         userEvent.type(screen.getByPlaceholderText(/Search City/i), 'Bangalore');
     });
 
     it("on change event for input", () => {
-        render(<SearchBar />)
+        produceComponent();
         const city = screen.getByPlaceholderText(/Search City/i);
         fireEvent.change(city, { target: { value: 'kanpur' } });
         expect(city.value).toBe('kanpur');
     });
 
     it("on submit event for form", () => {
-        render(<SearchBar />);
-        // const mockSubmit = jest.fn();
-        fireEvent.submit(screen.queryByTestId("form"));
-        // expect(mockSubmit).toHaveBeenCalled();
-        // expect(mockSubmit.mock.calls).toEqual([[{name: 'Joe Doe'}]]); 
+        produceComponent();
+        const city = screen.getByPlaceholderText(/Search City/i);
+        fireEvent.change(city, { target: { value: "kanpur" } });
+        fireEvent.click(city);
+        fireEvent.submit(city); 
+    });
+
+    it("should return the initial values for inputCity", async () => {
+        const { result } = renderHook(() => produceComponent());
+        // const { inputCity } = result.current;
+        console.log(result.current)
+
+        // expect(inputCity).toBe('');
     });
 });
