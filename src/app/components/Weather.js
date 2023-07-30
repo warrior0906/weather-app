@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import moment from "moment";
 import { metaData, temp } from "../utils";
-import "./styles/weather.css";
+import "./styles/weather.scss";
 
 export function Weather() {
   const city = useSelector((state) => state.location.city);

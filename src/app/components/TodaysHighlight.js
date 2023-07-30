@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { metaData, formatTime, changeSpeedUnit, todayHighlightBottomData } from '../utils';
-import './styles/todaysHighlight.css';
+import './styles/todaysHighlight.scss';
 
 export function TodaysHighlight() {
     const city = useSelector((state) => state.location.city);

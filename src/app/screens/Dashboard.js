@@ -5,7 +5,7 @@ import { getWeatherFetch } from '../store/reducerActions/weatherSlice';
 import { setLocation } from '../store/reducerActions/locationSlice';
 import { getForecastFetch } from '../store/reducerActions/forecastSlice';
 import { metaData } from '../utils';
-import './Dashboard.css';
+import './Dashboard.scss';
 
 export function Dashboard() {
 

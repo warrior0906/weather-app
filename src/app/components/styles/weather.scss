@@ -1,9 +1,11 @@
+@import "../../utils/colors.scss";
+
 .weatherCard {
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: flex-end;
-  background-color: lightslategrey;
+  background-color: $background_secondary_1;
   border-radius: 16px;
   padding: 16px;
   margin-top: 16px;
@@ -11,19 +13,19 @@
 }
 .temperature {
   font-size: 40px;
-  color: #fff;
+  color: $text;
   margin: 0;
 }
 .weather {
   width: 100%;
-  color: #fff;
+  color: $text;
   margin: 0;
   font-size: 14px;
   margin-top: 12px;
   margin-bottom: 12px;
 }
 .location {
-  color: #fff;
+  color: $text;
   border-width: 1px;
   width: 100%;
   margin: 0;
@@ -36,7 +38,7 @@
   margin-bottom: 10px;
 }
 .dateTime {
-  color: #fff;
+  color: $text;
   margin: 0;
   margin-left: 10px;
   margin-bottom: 12px;
@@ -47,7 +49,7 @@
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: lightslategrey;
+  background-color: $background_secondary_1;
   border-radius: 16px;
   padding: 16px;
   margin-top: 16px;

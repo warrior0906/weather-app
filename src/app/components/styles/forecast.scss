@@ -1,3 +1,5 @@
+@import "../../utils/colors.scss";
+
 .forecast {
     display: flex;
     flex: 1;
@@ -14,16 +16,16 @@
     margin: 0;
 }
 .heading{
-    color: #fff;
+    color: $text;
     margin: 0;
     font-size: 14px;
 }
 .daySelect{
     margin: 16;
     border-radius: 16px;
-    border-color: black;
-    background-color: black;
-    color: #fff;
+    border-color: $border;
+    background-color: $border;
+    color: $text;
     padding: 4px;
 }
 ._5daysForecast {
@@ -31,7 +33,7 @@
     margin-top: 16px;
     padding: 16px;
     border-radius: 16px;
-    background-color: lightslategrey;
+    background-color: $background_secondary_1;
 }
 .renderWeatherForecast{
     display: flex;
@@ -44,14 +46,14 @@
     display: flex;
     flex: 1;
     margin: 0;
-    color: #fff;
+    color: $text;
     font-size: 12px;
 }
 .forecastTemp{
     display: flex;
     flex: 1;
     margin: 0;
-    color: #fff;
+    color: $text;
     font-size: 20px;
     font-weight: 600;
 }
@@ -59,13 +61,13 @@
     display: flex;
     flex: 1;
     margin: 0;
-    color: #fff;
+    color: $text;
     font-size: 12px;
 }
 .forecastDay{
     display: flex;
     flex: 1;
     margin: 0;
-    color: #fff;
+    color: $text;
     font-size: 12px;
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 import { metaData, temp, dayList, days } from '../utils';
-import './styles/forecast.css';
+import './styles/forecast.scss';
 
 export function Forecast() {
     const city = useSelector((state) => state.location.city);

@@ -1,14 +1,16 @@
+@import "../utils/colors.scss";
+
 .Dashboard {
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color: #242c3d;
+  background-color: $background_primary_1;
   padding: 16px;
   margin: 0;
 }
 .Heading {
   text-align: left;
-  color: #ffff;
+  color: $text;
 }
 .body {
   display: flex;

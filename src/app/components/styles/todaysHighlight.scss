@@ -1,15 +1,17 @@
+@import "../../utils/colors.scss";
+
 .todaysHighlight {
   display: flex;
   flex: 3;
   flex-direction: column;
-  background-color:darkgrey;
+  background-color: $background_secondary_2;
   border-radius: 16px;
   padding: 16px;
   margin-top: 16px;
   margin-left: 8px;
 }
 .todaysHighlightTitle {
-  color: #fff;
+  color: $text;
   width: 100%;
   margin-top: 0;
   font-size: 13px;
@@ -28,16 +30,16 @@
   padding: 16px;
   margin-right: 8px;
   border-width: 1px;
-  background-color:slategray;
+  background-color: $background_primary_2;
 }
 .windStatusTitle {
-  color: #fff;
+  color: $text;
   margin: 0;
   margin-bottom: 12px;
   font-size: 14px;
 }
 .windStatusValue {
-  color: #fff;
+  color: $text;
   font-size: 22px;
   margin: 0;
 }
@@ -48,11 +50,11 @@
   border-radius: 16px;
   padding: 16px;
   border-width: 1px;
-  background-color:slategray;
+  background-color: $background_primary_2;
   margin-left: 8px;
 }
 .sunriseSunsetTitle {
-  color: #fff;
+  color: $text;
   margin: 0;
   margin-bottom: 12px;
   font-size: 14px;
@@ -69,12 +71,12 @@
   flex-direction: column;
 }
 .sunriseTitle {
-  color: yellow;
+  color: $heading;
   margin: 0;
   font-size: 10px;
 }
 .sunriseValue {
-  color: #fff;
+  color: $text;
   margin: 0;
   font-size: 12px;
   font-weight: 700;
@@ -86,12 +88,12 @@
   align-items: flex-end;
 }
 .sunsetTitle {
-  color: yellow;
+  color: $heading;
   margin: 0;
   font-size: 10px;
 }
 .sunsetValue {
-  color: #fff;
+  color: $text;
   margin: 0;
   font-size: 12px;
   font-weight: 700;
@@ -105,13 +107,13 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color:slategray;
+  background-color:$background_primary_2;
   border-radius: 16px;
   padding: 16px;
   margin-right: 16px;
 }
 .BottomContainersDivTitle {
-  color: #fff;
+  color: $text;
   margin: 0;
   margin-bottom: 8px;
   font-size: 12px;
@@ -123,12 +125,12 @@
   align-items: flex-end;
 }
 .BottomContainersDivValue {
-  color: #fff;
+  color: $text;
   margin: 0;
   font-size: 22px;
 }
 .BottomContainersDivSuffix{
-  color: #fff;
+  color: $text;
   margin: 0;
   margin-bottom: 3px;
   font-size: 10px;
@@ -139,7 +141,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:slategray;
+  background-color:$background_primary_2;
   border-radius: 16px;
   padding: 16px;
   margin-top: 16px;
