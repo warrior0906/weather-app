@@ -74,31 +74,6 @@
   @include display-flex;
   margin-top: 16px;
 }
-.BottomContainersDiv {
-  @include todays-highlight-container;
-}
-.BottomContainersDivTitle {
-  color: $text;
-  margin: 0;
-  margin-bottom: 8px;
-  font-size: 12px;
-}
-.BottomContainersDivValueContainer {
-  @include display-flex;
-  flex-direction: row;
-  align-items: flex-end;
-}
-.BottomContainersDivValue {
-  color: $text;
-  margin: 0;
-  font-size: 22px;
-}
-.BottomContainersDivSuffix {
-  color: $text;
-  margin: 0;
-  margin-bottom: 3px;
-  font-size: 10px;
-}
 .todaysHighlightLoading {
   @extend .todaysHighlight;
   justify-content: center;

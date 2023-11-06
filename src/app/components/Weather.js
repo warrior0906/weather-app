@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import moment from "moment";
-import { metaData, temp } from "../utils";
+import { LocationOnOutlined, TodayOutlined } from "@mui/icons-material";
+import { metaData, temp, IconSize, IconColor } from "../utils";
 import "./styles/weather.scss";
 
 export function Weather() {
@@ -23,21 +24,13 @@ export function Weather() {
       </p>
       <p className="weather">{data?.weather[0]?.main}</p>
       <div className="wrapper">
-        <img
-          src={require("../assets/images/location.png")}
-          alt="location"
-          style={{ backgroundColor: "transparent", height: 24, width: 24 }}
-        />
+        <LocationOnOutlined color={IconColor} fontSize={IconSize.small} />
         <p className="location">
           {data?.name}, {data?.sys?.country}
         </p>
       </div>
       <div className="wrapper">
-        <img
-          src={require("../assets/images/calendar.png")}
-          alt="calendar"
-          style={{ backgroundColor: "transparent", height: 24, width: 24 }}
-        />
+        <TodayOutlined color={IconColor} fontSize={IconSize.small} />
         <p className="dateTime">
           {moment(new Date(data?.dt) * 1000).format("MMMM Do YYYY, h:mm A")}
         </p>

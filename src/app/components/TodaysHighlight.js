@@ -6,6 +6,7 @@ import {
   changeSpeedUnit,
   todayHighlightBottomData,
 } from "../utils";
+import { WeatherInfo } from "../components";
 import "./styles/todaysHighlight.scss";
 
 export function TodaysHighlight() {
@@ -29,19 +30,6 @@ export function TodaysHighlight() {
     setWindSpeed(changeSpeedUnit(data?.wind?.speed));
     data && setBottomData(todayHighlightBottomData(data, city));
   }, [data, city]);
-
-  const BottomContainers = (props) => {
-    const { title, value, suffix } = props;
-    return (
-      <div className="BottomContainersDiv">
-        <p className="BottomContainersDivTitle">{title}</p>
-        <div className="BottomContainersDivValueContainer">
-          {value && <p className="BottomContainersDivValue">{value}</p>}
-          {suffix && <p className="BottomContainersDivSuffix">{suffix}</p>}
-        </div>
-      </div>
-    );
-  };
 
   return data ? (
     <div className="todaysHighlight">
@@ -78,13 +66,7 @@ export function TodaysHighlight() {
       </div>
       <div className="todaysHighlightBottomDiv">
         {bottomData ? (
-          bottomData?.map((e) => (
-            <BottomContainers
-              title={e?.title}
-              value={e?.value}
-              suffix={e?.suffix}
-            />
-          ))
+          bottomData?.map((e) => <WeatherInfo data={e} key={e?.title} />)
         ) : (
           <p>Loading....</p>
         )}

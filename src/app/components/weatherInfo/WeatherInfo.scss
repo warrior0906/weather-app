@@ -1,0 +1,27 @@
+@import "../../utils/scss";
+
+.container {
+  @include todays-highlight-container;
+}
+.title {
+  color: $text;
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.valueContainer {
+  @include display-flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.value {
+  color: $text;
+  margin: 0;
+  font-size: 22px;
+}
+.suffix {
+  color: $text;
+  margin: 0;
+  margin-bottom: 3px;
+  font-size: 10px;
+}
