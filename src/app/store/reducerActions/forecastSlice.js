@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   forecastData: null,
@@ -10,7 +10,7 @@ const initialState = {
 };
 
 export const ForecastSlice = createSlice({
-  name: 'forecast',
+  name: "forecast",
   initialState,
   reducers: {
     getForecastFetch: (state) => {
@@ -18,8 +18,10 @@ export const ForecastSlice = createSlice({
     },
     getForecastSuccess: (state, action) => {
       state.forecastData = action.payload;
-      const data = action.payload?.list?.filter((e) =>
-        new Date().getDate() !== new Date(e?.dt_txt).getDate() && new Date(e?.dt_txt).getHours() === 0
+      const data = action.payload?.list?.filter(
+        (e) =>
+          //   new Date().getDate() !== new Date(e?.dt_txt).getDate() &&
+          new Date(e?.dt_txt).getHours() === 0
       );
       state._5daysForecast = data;
       state.loading = false;
@@ -33,8 +35,10 @@ export const ForecastSlice = createSlice({
     },
     getCityForecastSuccess: (state, action) => {
       state.cityForecastData = action.payload;
-      const data = action.payload?.list?.filter((e) =>
-        new Date().getDate() !== new Date(e?.dt_txt).getDate() && new Date(e?.dt_txt).getHours() === 0
+      const data = action.payload?.list?.filter(
+        (e) =>
+          // new Date().getDate() !== new Date(e?.dt_txt).getDate() &&
+          new Date(e?.dt_txt).getHours() === 0
       );
       state._5daysCityForecast = data;
       state.loading = false;
@@ -48,9 +52,16 @@ export const ForecastSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
+/**
+ *  Action creators are generated for each case reducer function
+ */
 export const {
-  getForecastFetch, getForecastSuccess, getForecastFailure, getCityForecastFetch, getCityForecastSuccess, getCityForecastFailure
+  getForecastFetch,
+  getForecastSuccess,
+  getForecastFailure,
+  getCityForecastFetch,
+  getCityForecastSuccess,
+  getCityForecastFailure,
 } = ForecastSlice.actions;
 
 export default ForecastSlice.reducer;
